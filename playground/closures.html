@@ -19,36 +19,43 @@
     //   }
     //   return inner;
     // }
+    // const innerFn = outer(); // capture the return value
+    // innerFn(); // run the value
 
-    // const innerFn = outer();
-    // innerFn();
+    // TODO: PART ONE
+    // function createGreeting(greeting = '') {
+    //   const myGreet = greeting.toUpperCase();
 
-    function createGreeting(greeting = '') {
-      const myGreet = greeting.toUpperCase();
-      return function (name) {
-        return `${myGreet} ${name}`;
-      }
-    }
+    //   return function (name) {
+    //     return `${myGreet} ${name}`;
+    //   };
+    // }
 
-    const sayHello = createGreeting('hello');
-    const sayHey = createGreeting('hey');
-    console.log(sayHello('wes'));
-    console.log(sayHello('kait'));
-    console.log(sayHey('kait'));
-
+    // const sayHello = createGreeting('hello');
+    // const sayHey = createGreeting('hey');
+    // console.log(sayHello('wes'));
+    // console.log(sayHello('kait'));
+    // console.log(sayHey('kait'));
 
     function createGame(gameName) {
       let score = 0;
+
       return function win() {
         score++;
         return `Your name ${gameName} score is ${score}`;
-      }
+      };
     }
 
     const hockeyGame = createGame('Hockey');
+    console.log(hockeyGame, 'hockeygame');
     const soccerGame = createGame('Soccer');
+    console.log(soccerGame, 'soccergame');
 
+    console.log(hockeyGame(), 'hockeyGame');
+    console.log(soccerGame(), 'soccerGame');
+    console.log(hockeyGame(), 'hockeyGame');
 
+    console.log(typeof hockeyGame, 'last part');
   </script>
 </body>
 
