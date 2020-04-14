@@ -30,3 +30,19 @@ function handleClick(event) {
 cardButtons.forEach((button)=> {
     button.addEventListener('click', handleClick);
 });
+
+// function to close modal, by removing open class
+function closeModal() {
+    modalOuter.classList.remove('open');
+}
+
+modalOuter.addEventListener('click', function(event) {
+    // place bang next to statement to convert to BOOLEAN data-type
+    // clicking on modalOuter div that wraps modalInner
+    const isOutside = !event.target.closest('.modal-inner'); 
+    // if clicking outside of modal, close modal by removing 'open' CSS class
+    if (isOutside) {
+        modalOuter.classList.remove('open');
+    }
+    
+}) 
