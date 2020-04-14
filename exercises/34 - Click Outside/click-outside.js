@@ -1,5 +1,6 @@
 // select all buttons
 const cardButtons = document.querySelectorAll('.card button');
+const modalInner = document.querySelector('.modal-inner');
 
 // handler callback function on card button click
 function handleClick(event) {
