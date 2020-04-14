@@ -1,5 +1,6 @@
 // select all buttons
 const cardButtons = document.querySelectorAll('.card button');
+const modalOuter = document.querySelector('.modal-outer');
 const modalInner = document.querySelector('.modal-inner');
 
 // handler callback function on card button click
@@ -13,7 +14,15 @@ function handleClick(event) {
     const imgSrc = document.querySelector('img').src;
     // grab DATA-SET 
     const description = card.dataset.description;
-        
+    const name = card.querySelector('h2').textContent;
+    
+    // use replace(); to replace string txt in src attribute
+    modalInner.innerHTML = `
+        <img src=${imgSrc.replace('200', '600')} alt=${name}/>
+        <p>${description}</p>
+    `;
+
+    modalOuter.classList.add('open');
 }
 
 
